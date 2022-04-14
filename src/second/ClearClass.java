@@ -1,26 +1,21 @@
-package first;
+package second;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ForthClass {
+public class ClearClass {
 
 	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\91992\\OneDrive\\Desktop\\Selenium\\chromedriver_win32\\chromedriver.exe");
 
 		ChromeDriver chDriver = new ChromeDriver();
 		chDriver.get("https://www.facebook.com/");
+		WebElement emailTextbox = chDriver.findElement(By.id("email"));
 		
-		chDriver.findElement(By.linkText("Facebook Lite")).click();
+		emailTextbox.sendKeys("KTCTC email id");
 		
-		chDriver.findElement(By.partialLinkText("Voting Information")).click();
-		
-		
-		String str = "//*[@placeholder='emailid']";
-		
-		By bb = By.xpath("//*[@placeholder="emailid"]");
-		
-		
+		emailTextbox.clear();
 		
 		
 
