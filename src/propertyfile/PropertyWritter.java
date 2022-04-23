@@ -1,6 +1,7 @@
 package propertyfile;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -12,9 +13,12 @@ public class PropertyWritter {
 
 		File f = new File(System.getProperty("user.dir")+"\\"+"Env.properties");
 		
-		FileOutputStream fos = new FileOutputStream(f);
-		
+		FileInputStream fis = new FileInputStream(f);		
 		Properties propObj = new Properties();
+		propObj.load(fis);
+		fis.close();
+		
+		FileOutputStream fos = new FileOutputStream(f);
 		
 		propObj.setProperty("username", "PQRS");
 		
