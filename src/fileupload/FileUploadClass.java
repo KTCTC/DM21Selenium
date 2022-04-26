@@ -5,6 +5,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FileUploadClass {
 
@@ -20,9 +22,13 @@ public class FileUploadClass {
 		
 		driver.findElement(By.id("submitbutton")).click();
 		
-		String txt = driver.findElement(By.xpath("//h3[@id='res']/center")).getText();
+		WebDriverWait wt = new WebDriverWait(driver, 5);
+		wt.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//h3[@id='res']/center[contains(text(),'1 file ')]"))));
+		
+		String txt = driver.findElement(By.xpath("//h3[@id='res']/center[contains(text(),'1 file ')]")).getText();
 		System.out.println(txt);
 		txt = txt.replace("\n", " ");
+				
 		if (txt.equals("1 file has been successfully uploaded."))
 		{
 			System.out.println("File upload test case is Passed");
