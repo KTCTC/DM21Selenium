@@ -34,6 +34,10 @@ public class ExcelReader {
 		
 		System.out.println(sh.getRow(3).getCell(0).getStringCellValue());
 		
+		System.out.println(cel);
+		System.out.println(String.valueOf(cel));
+		
+		
 		
 		
 		

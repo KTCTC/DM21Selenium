@@ -35,6 +35,7 @@ public class ExcelReader2 {
 		for (int i=0; i<=rowNum;i++)
 		{
 			System.out.println(sh.getRow(i).getCell(0).getStringCellValue());
+			
 		}
 		
 		System.out.println("---------------------------------------------------------");
@@ -42,9 +43,11 @@ public class ExcelReader2 {
 		for (int i=0;i<rowNum2;i++)
 		{
 			XSSFRow row = sh.getRow(i);
-			XSSFCell cel = row.getCell(0);
+			XSSFCell cel = row.getCell(1);
 			
-			System.out.println(cel.getStringCellValue());
+			//System.out.println(cel.getStringCellValue());
+			System.out.println(cel);
+			System.out.println(String.valueOf(cel));
 			
 		}
 		
