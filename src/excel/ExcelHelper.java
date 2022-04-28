@@ -25,7 +25,7 @@ public class ExcelHelper {
 
 			 sh = wb.getSheet(sheetName);
 
-			XSSFRow row = sh.getRow(0);
+			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
